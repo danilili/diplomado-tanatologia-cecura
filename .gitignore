@@ -1,0 +1,5 @@
+# Originales sin optimizar (se conservan en local, no se publican)
+assets/foto-*.png
+
+# macOS
+.DS_Store

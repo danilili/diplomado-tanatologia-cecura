@@ -125,6 +125,103 @@
     </div>
   </section>
 
+  <!-- ======================= FECHAS =======================
+       Solo se publican los 3 primeros módulos. El calendario completo
+       (12 módulos, hasta octubre 2027) está en el PDF del programa. -->
+  <section class="fechas seccion-patron">
+    <div class="contenedor">
+      <h2 class="titulo-seccion">Fechas y horarios</h2>
+      <p class="fechas__bajada">Un fin de semana al mes, 10 horas por módulo. Modalidad presencial y en línea.</p>
+      <div class="fechas__horario">
+        <span class="pill pill--contorno-morado">Viernes · 16:00 a 21:00 h</span>
+        <span class="pill pill--contorno-azul">Sábados · 9:00 a 14:00 h</span>
+      </div>
+      <div class="fechas__grid">
+        <div class="fecha">
+          <div class="fecha__modulo">Módulo 1</div>
+          <div class="fecha__dia">11 y 12 de septiembre</div>
+          <div class="fecha__anio">2026</div>
+          <div class="fecha__tema">Principios y fundamentos de Curación de Actitudes</div>
+        </div>
+        <div class="fecha">
+          <div class="fecha__modulo">Módulo 2</div>
+          <div class="fecha__dia">30 y 31 de octubre</div>
+          <div class="fecha__anio">2026</div>
+          <div class="fecha__tema">Introducción a la tanatología: las pérdidas a lo largo de la vida</div>
+        </div>
+        <div class="fecha">
+          <div class="fecha__modulo">Módulo 3</div>
+          <div class="fecha__dia">27 y 28 de noviembre</div>
+          <div class="fecha__anio">2026</div>
+          <div class="fecha__tema">Duelo: etapas, tipos y acompañamiento</div>
+        </div>
+      </div>
+      <div class="fechas__pie">
+        <span class="fechas__cupo">Cupo limitado</span>
+        <span class="fechas__nota">El calendario completo de los 12 módulos —hasta octubre de 2027— se entrega junto con el programa.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= TALLERISTAS ======================= -->
+  <section class="talleristas">
+    <div class="contenedor">
+      <h2 class="titulo-seccion">Quiénes te acompañan</h2>
+      <p class="talleristas__bajada">Profesionales con amplia experiencia humana y clínica, comprometidos con el cuidado, la escucha y el acompañamiento consciente.</p>
+      <div class="talleristas__grid">
+        <div class="tallerista">
+          <span class="tallerista__inicial">LA</span>
+          <div>
+            <div class="tallerista__nombre">Mtra. Luz Elena Aguirre</div>
+            <div class="tallerista__rol">Psicoterapeuta Gestalt · acompañamiento emocional y procesos de duelo</div>
+          </div>
+        </div>
+        <div class="tallerista">
+          <span class="tallerista__inicial">CA</span>
+          <div>
+            <div class="tallerista__nombre">M.A. Carlos Aguirre Jiménez</div>
+            <div class="tallerista__rol">Psicólogo, músico y psicoterapeuta clínico · coaching ontológico</div>
+          </div>
+        </div>
+        <div class="tallerista">
+          <span class="tallerista__inicial">LJ</span>
+          <div>
+            <div class="tallerista__nombre">Lic. Lucero Jiménez de Aguirre</div>
+            <div class="tallerista__rol">Psicóloga y facilitadora · crisis, duelo y facilitación de grupos</div>
+          </div>
+        </div>
+        <div class="tallerista">
+          <span class="tallerista__inicial">EV</span>
+          <div>
+            <div class="tallerista__nombre">Dr. Eduardo Vargas</div>
+            <div class="tallerista__rol">Psicólogo y docente · intervención en crisis y terapia familiar sistémica</div>
+          </div>
+        </div>
+        <div class="tallerista">
+          <span class="tallerista__inicial">MC</span>
+          <div>
+            <div class="tallerista__nombre">Moisés Contreras Reinoso</div>
+            <div class="tallerista__rol">Educación y acompañamiento humano · coaching y manejo de grupos</div>
+          </div>
+        </div>
+        <div class="tallerista">
+          <span class="tallerista__inicial">BS</span>
+          <div>
+            <div class="tallerista__nombre">Dra. Bertha Soria Garibay</div>
+            <div class="tallerista__rol">Pediatra · cuidados paliativos y acompañamiento a familias</div>
+          </div>
+        </div>
+        <div class="tallerista">
+          <span class="tallerista__inicial">CV</span>
+          <div>
+            <div class="tallerista__nombre">Dr. Carlos Aguirre Valderrama</div>
+            <div class="tallerista__rol">Médico psiquiatra · terapia familiar y psiquiatría infantil y de la adolescencia</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ======================= CERTIFICACIÓN ======================= -->
   <section class="certificacion seccion-patron">
     <div class="contenedor certificacion__grid">
@@ -199,8 +296,9 @@
   </section>
 
   <!-- ======================= CHECKOUT =======================
-       El botón de pago es una maqueta: conectar con Mercado Pago
-       (link de pago o Checkout Pro) cuando la cuenta esté lista. -->
+       Los links de pago de Mercado Pago se configuran en el objeto
+       MERCADO_PAGO, al final del archivo. Mientras estén vacíos, el botón
+       deriva la venta a WhatsApp. -->
   <section class="checkout" id="checkout">
     <div class="checkout__tarjeta">
       <div class="checkout__titulo">
@@ -208,17 +306,43 @@
         <span class="checkout__titulo-texto">Pago 100% protegido</span>
       </div>
       <p class="checkout__bajada">Procesado por Mercado Pago. Tus datos bancarios nunca pasan por Cecura.</p>
-      <div class="checkout__resumen">
-        <div class="checkout__linea"><span>Diplomado de Facilitadores en Tanatología</span><strong>$25,200</strong></div>
-        <div class="checkout__descuento"><span>Pago temprano · 30% de descuento (hasta el 15 de agosto)</span><span>−$10,800</span></div>
+
+      <!-- Selector de plan: cada opción apunta a un link de pago distinto -->
+      <div class="checkout__opciones">
+        <label class="opcion-pago">
+          <input type="radio" name="plan-pago" value="unico" checked>
+          <span class="opcion-pago__cuerpo">
+            <span class="opcion-pago__titulo">Pago único · precio de pago temprano</span>
+            <span class="opcion-pago__nota">Con opción a 3 meses sin intereses</span>
+          </span>
+          <span class="opcion-pago__precio">$25,200</span>
+        </label>
+        <label class="opcion-pago">
+          <input type="radio" name="plan-pago" value="msi">
+          <span class="opcion-pago__cuerpo">
+            <span class="opcion-pago__titulo">12 meses sin intereses</span>
+            <span class="opcion-pago__nota">Sobre el precio total de $36,000</span>
+          </span>
+          <span class="opcion-pago__precio">$3,000<span class="opcion-pago__unidad">/mes</span></span>
+        </label>
       </div>
-      <button class="checkout__boton" id="boton-pagar" type="button">Pagar con Mercado Pago</button>
+
+      <div class="checkout__resumen">
+        <div class="checkout__linea"><span>Diplomado de Facilitadores en Tanatología</span><strong id="resumen-total">$25,200</strong></div>
+        <div class="checkout__descuento" id="resumen-detalle"><span>Pago temprano · 30% de descuento (hasta el 15 de agosto)</span><span>−$10,800</span></div>
+      </div>
+
+      <button class="checkout__boton" id="boton-pagar" type="button">
+        <span class="checkout__boton-texto">Pagar con</span>
+        <span class="mp-logo">Mercado Pago</span>
+      </button>
       <div class="checkout__sellos">
         <span class="sello">Tarjeta · 3 y 12 MSI</span>
         <span class="sello">OXXO</span>
         <span class="sello">SPEI</span>
         <span class="sello">🔒 Conexión cifrada</span>
       </div>
+      <p class="checkout__legal">Al continuar te llevamos al entorno seguro de Mercado Pago. ¿Necesitas factura o pagar por transferencia? <a href="https://wa.me/523319894744">Escríbenos por WhatsApp</a>.</p>
     </div>
   </section>
 
@@ -310,11 +434,73 @@
   </div>
 
   <script>
-    // --- Botón de pago (maqueta) ---------------------------------------
-    // Sustituir por el link de pago de Mercado Pago cuando exista:
-    //   window.location.href = 'https://mpago.la/XXXXXXX';
-    document.getElementById('boton-pagar').addEventListener('click', function () {
-      alert('La integración con Mercado Pago se conectará cuando Cecura abra su cuenta.');
+    // ====================================================================
+    // MERCADO PAGO — ÚNICO LUGAR QUE HAY QUE EDITAR PARA ACTIVAR EL PAGO
+    // --------------------------------------------------------------------
+    // 1. En Mercado Pago: Tu negocio → Links de pago → crear un link por plan.
+    //      · "unico": monto $25,200, cuotas hasta 3 MSI.
+    //      · "msi":   monto $36,000, cuotas hasta 12 MSI.
+    // 2. Pega aquí la URL de cada link (se ve así: https://mpago.la/XXXXXXX
+    //    o https://www.mercadopago.com.mx/...).
+    // 3. Listo: el botón deja de mandar a WhatsApp y cobra directo.
+    //
+    // Si en vez de links se usa Checkout Pro (con backend), sustituye la
+    // función irAPagar() por la creación de la preferencia y el redirect a
+    // su init_point.
+    // ====================================================================
+    var MERCADO_PAGO = {
+      unico: '',   // ← link de pago del pago único ($25,200)
+      msi:   ''    // ← link de pago de 12 MSI ($36,000)
+    };
+
+    // Fallback mientras no haya links: la venta se deriva a WhatsApp.
+    var WHATSAPP = 'https://wa.me/523319894744';
+
+    // Textos del resumen según el plan elegido
+    var PLANES = {
+      unico: {
+        total: '$25,200',
+        detalle: ['Pago temprano · 30% de descuento (hasta el 15 de agosto)', '−$10,800']
+      },
+      msi: {
+        total: '$36,000',
+        detalle: ['12 meses sin intereses con tarjeta', '$3,000 × 12']
+      }
+    };
+
+    var botonPagar   = document.getElementById('boton-pagar');
+    var resumenTotal = document.getElementById('resumen-total');
+    var resumenDet   = document.getElementById('resumen-detalle').getElementsByTagName('span');
+
+    function planSeleccionado() {
+      return document.querySelector('input[name="plan-pago"]:checked').value;
+    }
+
+    // Actualiza el resumen al cambiar de plan
+    Array.prototype.forEach.call(document.querySelectorAll('input[name="plan-pago"]'), function (radio) {
+      radio.addEventListener('change', function () {
+        var plan = PLANES[planSeleccionado()];
+        resumenTotal.textContent = plan.total;
+        resumenDet[0].textContent = plan.detalle[0];
+        resumenDet[1].textContent = plan.detalle[1];
+      });
+    });
+
+    // --- Botón de pago ---------------------------------------------------
+    botonPagar.addEventListener('click', function () {
+      var plan = planSeleccionado();
+      var link = MERCADO_PAGO[plan];
+
+      if (link) {
+        window.location.href = link;                       // → Mercado Pago
+        return;
+      }
+
+      // Sin link configurado: abrir WhatsApp con el plan ya escrito.
+      var mensaje = plan === 'msi'
+        ? 'Hola, quiero inscribirme al Diplomado de Facilitadores en Tanatología a 12 meses sin intereses.'
+        : 'Hola, quiero inscribirme al Diplomado de Facilitadores en Tanatología con el pago único de $25,200.';
+      window.open(WHATSAPP + '?text=' + encodeURIComponent(mensaje), '_blank');
     });
 
     // --- Formulario del lead magnet -------------------------------------

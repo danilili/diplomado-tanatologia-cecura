@@ -233,6 +233,72 @@ h1, h2 { font-family: var(--font-titulos); font-weight: 700; }
 .incluye__card-titulo { font-family: var(--font-titulos); font-weight: 700; font-size: 19px; }
 .incluye__card-texto { font-size: 15px; line-height: 1.5; color: var(--gris); }
 
+/* --- Fechas y horarios ----------------------------------------------------- */
+.fechas { padding: 72px 24px; }
+.fechas__bajada { margin: 0 0 20px; font-size: 18px; color: var(--gris); max-width: 60ch; }
+.fechas__horario { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+.fechas__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.fecha {
+  background: #ffffff;
+  border: 1.5px solid var(--lila-borde);
+  border-left: 5px solid var(--morado);
+  border-radius: 20px;
+  padding: 24px 26px;
+}
+.fecha__modulo {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--morado);
+  margin-bottom: 10px;
+}
+.fecha__dia { font-family: var(--font-titulos); font-weight: 700; font-size: 22px; line-height: 1.2; }
+.fecha__anio { font-size: 15px; color: var(--gris-suave); font-weight: 600; margin-bottom: 10px; }
+.fecha__tema { font-size: 15px; line-height: 1.5; color: var(--gris); }
+.fechas__pie { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin-top: 24px; }
+.fechas__cupo {
+  background: var(--morado);
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 7px 16px;
+}
+.fechas__nota { font-size: 15px; color: var(--gris); }
+
+/* --- Talleristas ------------------------------------------------------------ */
+.talleristas { padding: 72px 24px; }
+.talleristas__bajada { margin: 0 0 32px; font-size: 18px; color: var(--gris); max-width: 66ch; }
+.talleristas__grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 18px; }
+.tallerista {
+  background: var(--lila-claro);
+  border-radius: 20px;
+  padding: 22px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+.tallerista__inicial {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--morado);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-titulos);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+}
+.tallerista__nombre { font-family: var(--font-titulos); font-weight: 700; font-size: 18px; margin-bottom: 4px; }
+.tallerista__rol { font-size: 15px; line-height: 1.5; color: var(--gris); }
+
 /* --- Certificación -------------------------------------------------------- */
 .certificacion { padding: 72px 24px; }
 .certificacion__grid {
@@ -347,6 +413,29 @@ h1, h2 { font-family: var(--font-titulos); font-weight: 700; }
 .checkout__linea span:first-child { color: var(--gris); }
 .checkout__linea strong { font-weight: 700; }
 .checkout__descuento { display: flex; justify-content: space-between; font-size: 14px; color: var(--morado); }
+
+/* Selector de plan de pago dentro del checkout */
+.checkout__opciones { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; }
+.opcion-pago {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  border: 1.5px solid var(--lila-borde);
+  border-radius: 16px;
+  padding: 16px 18px;
+  cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.opcion-pago:hover { border-color: var(--morado); }
+/* Opción activa: se resalta con el morado de marca */
+.opcion-pago:has(input:checked) { border-color: var(--morado); background: var(--lila-claro); }
+.opcion-pago input { accent-color: var(--morado); width: 18px; height: 18px; flex-shrink: 0; }
+.opcion-pago__cuerpo { display: flex; flex-direction: column; gap: 2px; flex: 1; }
+.opcion-pago__titulo { font-family: var(--font-titulos); font-weight: 700; font-size: 16px; }
+.opcion-pago__nota { font-size: 14px; color: var(--gris); }
+.opcion-pago__precio { font-weight: 700; font-size: 19px; white-space: nowrap; }
+.opcion-pago__unidad { font-size: 14px; font-weight: 400; color: var(--gris); }
+
 .checkout__boton {
   width: 100%;
   background: var(--azul);
@@ -358,8 +447,21 @@ h1, h2 { font-family: var(--font-titulos); font-weight: 700; }
   font-size: 19px;
   padding: 18px;
   border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 .checkout__boton:hover { background: var(--morado); }
+/* Marca de Mercado Pago dentro del botón */
+.mp-logo {
+  background: #00B1EA;
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 4px 10px;
+  font-size: 17px;
+}
+.checkout__legal { margin: 16px 0 0; font-size: 13px; line-height: 1.5; color: var(--gris-suave); text-align: center; }
 .checkout__sellos { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 18px; }
 .sello {
   border: 1px solid var(--lila-borde);
